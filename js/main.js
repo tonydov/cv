@@ -40,6 +40,10 @@ class SwipeHandler {
         if (this.dragging === true) {
             this.touchDiffX = this.touchInitialX - event.touches[0].clientX;
             this.touchDiffY = this.touchInitialY - event.touches[0].clientY;
+            this.totalDiff = this.baseDiff + this.touchDiffX;
+            if (this.totalDiff < 10 && (-1 * this.totalDiff) < (this.target.offsetWidth * 0.6 + 10)) {
+                this.target.style.transform = "translateX(" + this.totalDiff + "px)";
+            }
         }
     }
 

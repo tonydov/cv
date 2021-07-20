@@ -32,7 +32,6 @@
 html {
     font-family: AnnonymousPro, Helvetica, Arial, sans-serif;
     line-height: 1.5;
-    min-width: 480px;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -99,13 +98,15 @@ body {
     font-size: 1.5rem;
 }
 
-.nav-header-name:hover {
-    background-image: url(../img/gradient-animation.gif);
-    background-size: 150%;
-    background-position: center;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+@media (min-width:992px) {
+    .nav-header-name:hover {
+        background-image: url(../img/gradient-animation.gif);
+        background-size: 150%;
+        background-position: center;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 
 @media (max-width:768px) {
@@ -285,7 +286,7 @@ body {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 508px;
+    width: 480px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -323,7 +324,6 @@ body {
 
 .content-box {
     background: #fff;
-    width: 508px;
     box-shadow: 10px 10px 1px #000;
     padding: 32px 32px 22px 32px;
     margin: 20px 0 26px 0;
@@ -618,6 +618,12 @@ body {
     box-shadow: 15px 0 0 0 #000, -15px 0 0 0 #000;
     font-size: 3rem;
     line-height: 1.125;
+}
+
+@media (max-width: 991px) {
+    .content-big-caption>h2>span {
+        font-size: 2rem;
+    }
 }
 
 .content-preview-row {
@@ -1180,6 +1186,12 @@ body {
     margin: 12px 0;
     font-size: 2.625rem;
     line-height: 1.14286;
+}
+
+@media (max-width:991px) {
+    .experience-block .text-block>h3 {
+        font-size: 2rem;
+    }
 }
 
 .experience-block .text-block>.text {

@@ -181,20 +181,27 @@ body {
 .intro-bg-hearts {
     background-image: url(../img/hearts-bg.svg);
     background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
     z-index: 0;
-    background-size: 130%;
     background-color: #a0ff20;
-    width: 100%;
     height: 100%;
+    width: 100%;
+}
+
+
+/* @media (max-width:991px) {
+    .intro-bg-hearts {
+        background-size: 220%;
+    }
 }
 
 @media (max-width:576px) {
     .intro-bg-hearts {
-        background-size: 220%
+        background-size: 220%;
     }
-}
+} */
 
 .intro-container.in-view .intro-bg-hearts {
     animation: heartbeatPulse 4s ease-in-out alternate;
@@ -1055,6 +1062,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     width: 100%;
+    max-width: 1170px;
 }
 
 .experience-content::before {

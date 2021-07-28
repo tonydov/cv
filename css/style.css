@@ -120,19 +120,6 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-
-/* 
-@media (min-width:992px) {
-    .nav-header-name:hover {
-        background-image: url(../img/gradient-animation.gif);
-        background-size: 150%;
-        background-position: center;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-} */
-
 @media (max-width:768px) {
     .nav-header-name {
         right: 32px;

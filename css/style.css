@@ -190,19 +190,6 @@ body {
     width: 100%;
 }
 
-
-/* @media (max-width:991px) {
-    .intro-bg-hearts {
-        background-size: 220%;
-    }
-}
-
-@media (max-width:576px) {
-    .intro-bg-hearts {
-        background-size: 220%;
-    }
-} */
-
 .intro-container.in-view .intro-bg-hearts {
     animation: heartbeatPulse 4s ease-in-out alternate;
 }

@@ -41,9 +41,6 @@ class SwipeHandler {
             this.touchDiffX = this.touchInitialX - event.touches[0].clientX;
             this.touchDiffY = this.touchInitialY - event.touches[0].clientY;
             this.totalDiff = this.baseDiff + this.touchDiffX;
-            if (this.totalDiff < 10 && (-1 * this.totalDiff) < (this.target.offsetWidth * 0.6 + 10)) {
-                this.target.style.transform = "translateX(" + this.totalDiff + "px)";
-            }
         }
     }
 
@@ -65,7 +62,7 @@ class SwipeHandler {
             }
             var currentOrder = Math.trunc((scrollPercent + 0.15) / 0.3);
             if (Math.abs(this.touchDiffX) > Math.abs(this.touchDiffY)) {
-                if (this.touchDiffX > 0) {
+                if (this.touchDiffX < 0) {
                     this.scrolledToNext(Math.max(0, currentOrder - 1));
                 } else {
                     this.scrolledToNext(Math.min(2, currentOrder + 1));

@@ -94,8 +94,34 @@ body {
     position: absolute;
     right: 35px;
     font-size: 1.5rem;
+    width: 20ch;
 }
 
+.nav-header-name>h4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav-header-name>h4:first-child {
+    z-index: 10;
+}
+
+.nav-header-name:hover>h4:first-child {
+    display: none;
+}
+
+.nav-header-name>h4:nth-child(2) {
+    background-image: url(../img/gradient-animation.gif);
+    background-size: 150%;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* 
 @media (min-width:992px) {
     .nav-header-name:hover {
         background-image: url(../img/gradient-animation.gif);
@@ -105,7 +131,7 @@ body {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-}
+} */
 
 @media (max-width:768px) {
     .nav-header-name {

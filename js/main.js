@@ -55,12 +55,13 @@ class SwipeHandler {
     }
 
     stopTouchDrag(event) {
+        var scrollPercent = (-1 * this.baseDiff) / this.target.offsetWidth;
+        if (scrollPercent > 0.45) {
+            scrollPercent = 0.45;
+        }
+        var currentOrder = Math.trunc((scrollPercent + 0.15) / 0.3);
         if (this.dragging === true) {
-            var scrollPercent = (-1 * this.baseDiff) / this.target.offsetWidth;
-            if (scrollPercent > 0.45) {
-                scrollPercent = 0.45;
-            }
-            var currentOrder = Math.trunc((scrollPercent + 0.15) / 0.3);
+
             if (Math.abs(this.touchDiffX) > Math.abs(this.touchDiffY)) {
                 if (this.touchDiffX < 0) {
                     this.scrolledToNext(Math.max(0, currentOrder - 1));
@@ -72,7 +73,7 @@ class SwipeHandler {
             this.dragging = false;
         }
         if ((Date.now() - this.lastUpdate) < this.delay) {
-            this.clickEvent();
+            this.clickEvent(currentOrder);
         }
     }
 
@@ -129,18 +130,23 @@ class SwipeHandler {
         }
     }
 
-    clickEvent() {
+    clickEvent(order) {
         if (this.clickCallbacks.length > 0) {
             for (i = 0; i < this.clickCallbacks.length; i++) {
-                this.clickCallbacks[i]();
+                this.clickCallbacks[i](order);
             }
         }
     }
 
 }
 
-function clickSlide() {
-    var clickedSlide = listDraggable.querySelector(".slide:hover");
+function clickSlide(order) {
+    var clickedSlide;
+    if (!isNaN(parseInt(order))) {
+        clickedSlide = listDraggable.querySelector(".slide:nth-child(" + (order + 1) + ")");
+    } else {
+        clickedSlide = listDraggable.querySelector(".slide:hover");
+    }
     if (clickedSlide !== null) {
         window.location.href = clickedSlide.getAttribute("href");
     }

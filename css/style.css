@@ -1408,7 +1408,7 @@ body {
     transition: transform .3s ease-in;
 }
 
-@media (max-width:991px) {
+@media (max-width:768px) {
     .contact-button {
         right: 0px;
         bottom: 88px;
